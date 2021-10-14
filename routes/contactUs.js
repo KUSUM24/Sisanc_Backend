@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
       console.log("done");
       res.json({
         status: "true",
-        message: "Thank you for connecting to us.",
+        message: "Thank you for connecting us.",
       });
     })
     .catch((e) => {
