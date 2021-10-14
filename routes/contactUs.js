@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
       console.log(e);
       res.json({
         status: "false",
-        message: "Please try again later.",
+        error: "Please try again later.",
       });
     });
 });
