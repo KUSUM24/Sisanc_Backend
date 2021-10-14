@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const ContactUser = require("../schema/contactSchema");
+const sendEmail = require("../services/email");
 
 router.get("/", (req, res) => {
   res.send("contact");
@@ -9,6 +10,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   let { name, mobile } = req.body;
   console.log(name, mobile);
+  sendEmail.sendContactEmail(name, mobile);
   const newUser = new ContactUser({
     name,
     mobile: parseInt(mobile),
