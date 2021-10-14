@@ -9,8 +9,8 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   let { name, mobile } = req.body;
+  // sendEmail.sendContactEmail(name, mobile);
   console.log(name, mobile);
-  sendEmail.sendContactEmail(name, mobile);
   const newUser = new ContactUser({
     name,
     mobile: parseInt(mobile),
